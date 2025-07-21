@@ -47,7 +47,7 @@ generate_commit_message() {
   $DIFF"
 
   if [ "$AUTO_MODE" = false ]; then
-    P_TOKENS=$(./gcommit_tokenize.py --text "$PROMPT")
+    P_TOKENS=$($GCOMMIT_DIR/gcommit_tokenize.py --text "$PROMPT")
     if [ $? -ne 0 ]; then
       echo "Error: Failed to tokenize prompt."
       echo

@@ -40,6 +40,8 @@ These scripts use OpenAI APIs. Store your API key in the `OPENAI_API_KEY` enviro
 Clone repository:
 ```bash
 git clone https://github.com/asoloa/gcommit.git ~/.gcommit
+echo "export GCOMMIT_DIR=~/.gcommit" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ### Setting custom script for `prepare-commit-message` hook
@@ -51,3 +53,11 @@ ln -s ~/.gcommit/gcommit-hook.sh prepare-commit-message
 As this script only trackes staged changes, make sure you have already staged your to-be-committed changes via `git add`.
 
 After staging your changes, execute `git commit`.
+
+### Setting `gcommit` script
+Create a symbolink link of `gcommit.sh` to `/usr/bin/gcommit` script (make sure you have `sudo` privileges and `/usr/bin/gcommit` is not already in use):
+```bash
+cd /usr/bin
+ln -s ~/.gcommit/gcommit.sh gcommit
+```
+Now you can use `gcommit` anywhere in your terminal.
