@@ -42,7 +42,11 @@ EOM
   echo "" >> "$INPUT_FILE"
 
   COMMENT_MSG="# Lines starting with '#' won't be added to your commit message.
-# Total tokens consumed (input + response): $(echo "$RESPONSE" | jq -r '.usage.total_tokens')"
+# Total tokens consumed (input + response): $(echo "$RESPONSE" | jq -r '.usage.total_tokens')
+#
+# To abort this commit, simply remove the contents in this editor, then save and exit.
+# To continue, just save and exit."
+
   echo "$COMMENT_MSG" >> "$INPUT_FILE"
   exit 0
 }
