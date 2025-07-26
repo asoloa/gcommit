@@ -3,6 +3,7 @@ These scripts use GPT-4.1 to automatically generate conventional commit messages
 
 ```bash
 $ gcommit.sh --help
+Usage: gcommit.sh [OPTIONS] [FILE]
 Generates a commit message based on all changes (both staged and unstaged) since the last commit.
 
 Options:
