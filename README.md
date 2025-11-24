@@ -19,7 +19,7 @@ If "-s|--staged" is not used, all changes (staged and unstaged) will be processe
 If FILE exists and is not empty, its contents will be overwritten with the generated commit message.
 ```
 
-`gcommit-hook.sh` - same as `gcommit.sh` without the user prompts and options. This only detects the staged changes and can be used as a custom script for your project's `prepare-commit-message` hook.
+`gcommit-hook.sh` - same as `gcommit.sh` without the user prompts and options. This only detects the staged changes and can be used as a custom script for your project's `prepare-commit-msg` hook.
 
 `gcommit_tokenize.py` - uses `tiktoken` to determine the tokens to be consumed by the input prompt (context + `git diff` output)
 
@@ -45,11 +45,11 @@ echo "export GCOMMIT_DIR=~/.gcommit" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Setting custom script for `prepare-commit-message` hook
-Create a symbolink link of `gcommit-hook.sh` to your project's `prepare-commit-message` hook:
+### Setting custom script for `prepare-commit-msg` hook
+Create a symbolink link of `gcommit-hook.sh` to your project's `prepare-commit-msg` hook:
 ```bash
 cd <project>/.git/hooks
-ln -s ~/.gcommit/gcommit-hook.sh prepare-commit-message
+ln -s ~/.gcommit/gcommit-hook.sh prepare-commit-msg
  ```
 As this script only trackes staged changes, make sure you have already staged your to-be-committed changes via `git add`.
 
